@@ -1,0 +1,80 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 340px;
+  justify-content: space-between;
+}
+
+.mark {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+.mark strong { color: #e2e8f0; }
+
+.status {
+  color: #a5b4fc;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.quit {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #64748b;
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.quit:hover { color: #e2e8f0; border-color: #64748b; }
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 6px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  cursor: pointer;
+  color: #e2e8f0;
+  transition: background 0.12s, border-color 0.12s;
+}
+.cell:hover:not(:disabled) { background: #253349; border-color: #6366f1; }
+.cell:disabled { cursor: default; }
+
+.cell.x { color: #818cf8; }
+.cell.o { color: #fb923c; }
+
+.cell.win {
+  background: #1e3a5f;
+  border-color: #6366f1;
+}
+
+.restart {
+  padding: 0.7rem 2rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.restart:hover { background: #4f46e5; }
