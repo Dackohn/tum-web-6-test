@@ -1,0 +1,276 @@
+.board {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #0d1117;
+  color: #e2e8f0;
+}
+
+.waiting {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  margin-top: 80px;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 12px;
+  background: #161b22;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+}
+
+.playerChip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  min-width: 80px;
+}
+
+.activePlayer {
+  border-color: #6366f1;
+  background: #1e1f40;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.playerName {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.cardCount {
+  font-size: 0.72rem;
+  color: #94a3b8;
+}
+
+/* ── Center ── */
+.center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  margin: 8px 0;
+}
+
+.pileArea {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.pileLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.pileLabelText {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.suitDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.suitLabel {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.suitSymbol {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.redSuit {
+  color: #ef4444;
+}
+
+.darkSuit {
+  color: #e2e8f0;
+}
+
+/* ── Spectator ── */
+.spectatorBanner {
+  background: #1c2128;
+  border: 1px solid #30363d;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Hand ── */
+.handSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.handLabel {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hand {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 16px;
+  max-width: 100%;
+  background: #161b22;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  min-height: 128px;
+  align-items: center;
+}
+
+.hand::-webkit-scrollbar {
+  height: 6px;
+}
+.hand::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+/* ── Controls ── */
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btnDraw {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnDraw:hover:not(:disabled) {
+  background: #818cf8;
+}
+
+.btnDraw:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btnQuit {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btnQuit:hover {
+  background: #1c2128;
+  color: #e2e8f0;
+}
+
+/* ── Modal / Overlay ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  min-width: 260px;
+}
+
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+  text-align: center;
+}
+
+.suitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.suitBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: #1c2128;
+  border: 1px solid #30363d;
+  font-size: 2.4rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.suitBtn:hover {
+  background: #21262d;
+  border-color: #6366f1;
+}
+
+.btnPrimary {
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover {
+  background: #818cf8;
+}

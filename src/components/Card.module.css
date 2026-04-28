@@ -1,0 +1,75 @@
+.card {
+  width: 70px;
+  height: 100px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  padding: 0;
+}
+
+.card:hover:not(:disabled) {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.red {
+  color: #dc2626;
+}
+
+.dark {
+  color: #1e293b;
+}
+
+.corner {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.center {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.highlight {
+  border: 2.5px solid #6366f1;
+  box-shadow: 0 0 10px 2px rgba(99, 102, 241, 0.65);
+}
+
+.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Face-down card */
+.cardBack {
+  width: 70px;
+  height: 100px;
+  border-radius: 8px;
+  background: #1e3a8a;
+  border: 2px solid #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.backPattern {
+  font-size: 1.8rem;
+  color: #93c5fd;
+  opacity: 0.5;
+}
